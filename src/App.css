@@ -43,20 +43,20 @@
 
 :root {
   --radius: 0.5rem;
-  /* Accenture-inspired dark theme */
+  /* Aevance-inspired dark theme */
   --background: oklch(0.08 0 0); /* Very dark background */
   --foreground: oklch(0.98 0 0); /* White text */
   --card: oklch(0.12 0 0); /* Dark card background */
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.12 0 0);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.65 0.25 320); /* Accenture purple */
+  --primary: oklch(0.65 0.25 320); /* Aevance purple */
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.15 0 0);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.15 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.65 0.25 320); /* Accenture purple */
+  --accent: oklch(0.65 0.25 320); /* Aevance purple */
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.2 0 0);
@@ -95,38 +95,38 @@
 }
 
 @layer components {
-  /* Accenture-inspired components */
-  .accenture-gradient {
+  /* Aevance-inspired components */
+  .aevance-gradient {
     background: linear-gradient(135deg, #A100FF 0%, #FF0080 50%, #00D4FF 100%);
   }
   
-  .accenture-card {
+  .aevance-card {
     @apply bg-card border border-border rounded-lg overflow-hidden;
     @apply transform transition-all duration-300 hover:scale-105;
     background: linear-gradient(135deg, rgba(161, 0, 255, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
   }
   
-  .accenture-button {
+  .aevance-button {
     @apply bg-primary hover:bg-primary/90 text-primary-foreground;
     @apply px-6 py-3 rounded-md font-medium transition-all duration-200;
     @apply flex items-center gap-2 hover:gap-3;
   }
   
-  .accenture-hero {
+  .aevance-hero {
     background: radial-gradient(circle at 20% 50%, rgba(161, 0, 255, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 40% 80%, rgba(255, 0, 128, 0.2) 0%, transparent 50%),
                 oklch(0.08 0 0);
   }
   
-  .accenture-text-gradient {
+  .aevance-text-gradient {
     background: linear-gradient(135deg, #A100FF 0%, #00D4FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  .accenture-border {
+  .aevance-border {
     border-image: linear-gradient(135deg, #A100FF 0%, #00D4FF 100%) 1;
   }
   
@@ -145,7 +145,7 @@
   }
   
   /* Glow effect */
-  .accenture-glow {
+  .aevance-glow {
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.3);
   }
   

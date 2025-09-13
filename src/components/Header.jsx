@@ -47,7 +47,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild className="accenture-button">
+            <Button asChild className="aevance-button">
               <Link to="/appointments">
                 Get Started
                 <ChevronRight className="h-4 w-4" />
@@ -86,7 +86,7 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="accenture-button w-fit">
+              <Button asChild className="aevance-button w-fit">
                 <Link to="/appointments" onClick={() => setIsMenuOpen(false)}>
                   Get Started
                   <ChevronRight className="h-4 w-4" />

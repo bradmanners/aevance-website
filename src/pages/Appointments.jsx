@@ -54,10 +54,10 @@ const Appointments = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-24 accenture-hero">
+      <section className="py-24 aevance-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Schedule Your <span className="accenture-text-gradient">Consultation</span>
+            Schedule Your <span className="aevance-text-gradient">Consultation</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's discuss how Aevance can help transform your business. 
@@ -71,7 +71,7 @@ const Appointments = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Choose Your <span className="accenture-text-gradient">Consultation Type</span>
+              Choose Your <span className="aevance-text-gradient">Consultation Type</span>
             </h2>
           </div>
 
@@ -81,7 +81,7 @@ const Appointments = () => {
               return (
                 <div
                   key={type.id}
-                  className="accenture-card p-8 text-center hover:accenture-glow"
+                  className="aevance-card p-8 text-center hover:aevance-glow"
                 >
                   <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${type.gradient} rounded-2xl mb-6`}>
                     <IconComponent className="h-8 w-8 text-white" />
@@ -111,7 +111,7 @@ const Appointments = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-background rounded-2xl p-8 md:p-12 border border-border text-center">
             <h2 className="text-3xl font-bold text-foreground mb-6">
-              Ready to <span className="accenture-text-gradient">Get Started</span>?
+              Ready to <span className="aevance-text-gradient">Get Started</span>?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us directly to schedule your consultation. We'll work with you to find the perfect time and format.
@@ -160,7 +160,7 @@ const Appointments = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="accenture-button">
+              <Button asChild className="aevance-button">
                 <a href="mailto:hello@aevance.com?subject=Consultation Booking Request&body=Hi, I'd like to schedule a consultation. Please let me know your availability.">
                   Email to Book
                   <ChevronRight className="h-4 w-4" />
@@ -181,14 +181,14 @@ const Appointments = () => {
       <section className="py-16 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-bold text-foreground mb-12">
-            What to <span className="accenture-text-gradient">Expect</span>
+            What to <span className="aevance-text-gradient">Expect</span>
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon
               return (
-                <div key={index} className="accenture-card p-6 text-center">
+                <div key={index} className="aevance-card p-6 text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
@@ -206,7 +206,7 @@ const Appointments = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 accenture-gradient">
+      <section className="py-16 aevance-gradient">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Transform Your Business?

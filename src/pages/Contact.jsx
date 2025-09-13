@@ -13,17 +13,9 @@ const Contact = () => {
       href: 'mailto:hello@aevance.com'
     },
     {
-      icon: Phone,
-      title: 'Phone',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 9am to 6pm EST',
-      gradient: 'from-green-500 to-emerald-500',
-      href: 'tel:+15551234567'
-    },
-    {
       icon: MapPin,
       title: 'Location',
-      details: 'New York, NY',
+      details: 'Brisbane, QLD',
       description: 'Available for in-person meetings',
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -39,10 +31,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-24 accenture-hero">
+      <section className="py-24 aevance-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Get in <span className="accenture-text-gradient">Touch</span>
+            Get in <span className="aevance-text-gradient">Touch</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Ready to transform your business? We'd love to hear from you. 
@@ -58,7 +50,7 @@ const Contact = () => {
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon
               const CardContent = (
-                <div className="accenture-card text-center p-8 hover:accenture-glow">
+                <div className="aevance-card text-center p-8 hover:aevance-glow">
                   <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${info.gradient} rounded-2xl mb-6`}>
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
@@ -94,7 +86,7 @@ const Contact = () => {
           <div className="bg-background rounded-2xl p-8 md:p-12 border border-border">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Ready to <span className="accenture-text-gradient">Connect</span>?
+                Ready to <span className="aevance-text-gradient">Connect</span>?
               </h2>
               <p className="text-muted-foreground">
                 Contact us directly using the information below or schedule a consultation.
@@ -153,7 +145,7 @@ const Contact = () => {
                   <p className="text-muted-foreground mb-3">
                     Schedule a free discovery call to discuss your needs
                   </p>
-                  <Button asChild className="accenture-button">
+                  <Button asChild className="aevance-button">
                     <Link to="/appointments">
                       Schedule Now
                       <ChevronRight className="h-4 w-4" />
@@ -174,7 +166,7 @@ const Contact = () => {
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="accenture-card p-6">
+            <div className="aevance-card p-6">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Calendar className="h-6 w-6 text-white" />
               </div>
@@ -182,7 +174,7 @@ const Contact = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 Book a consultation to discuss your specific needs
               </p>
-              <Button asChild className="accenture-button">
+              <Button asChild className="aevance-button">
                 <Link to="/appointments">
                   Book Consultation
                   <ChevronRight className="h-4 w-4" />
@@ -190,7 +182,7 @@ const Contact = () => {
               </Button>
             </div>
             
-            <div className="accenture-card p-6">
+            <div className="aevance-card p-6">
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Phone className="h-6 w-6 text-white" />
               </div>
@@ -198,7 +190,7 @@ const Contact = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 Need immediate assistance? Call our priority line
               </p>
-              <Button asChild className="accenture-button">
+              <Button asChild className="aevance-button">
                 <a href="tel:+15551234567">
                   Call Now
                   <ChevronRight className="h-4 w-4" />
@@ -206,7 +198,7 @@ const Contact = () => {
               </Button>
             </div>
             
-            <div className="accenture-card p-6">
+            <div className="aevance-card p-6">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Linkedin className="h-6 w-6 text-white" />
               </div>
@@ -225,7 +217,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="accenture-gradient rounded-2xl p-8 text-white">
+          <div className="aevance-gradient rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Ready to Start Your Transformation?
             </h3>

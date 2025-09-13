@@ -11,7 +11,7 @@ const Home = () => {
     {
       icon: Users,
       title: 'Executive Leadership',
-      description: 'Interim CEO, CMO, and COO services to guide your organization through critical transitions.',
+      description: 'Interim CEO, CMO, and COO services to guide your organisation through critical transitions.',
       image: leadershipImage,
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -23,16 +23,9 @@ const Home = () => {
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: Smartphone,
-      title: 'SaaS & Mobile Development',
-      description: 'Full-stack development, maintenance, and support for modern applications.',
-      image: saasImage,
-      gradient: 'from-green-500 to-emerald-500'
-    },
-    {
       icon: Settings,
       title: 'Operational Excellence',
-      description: 'Streamline processes and optimize performance across your entire organization.',
+      description: 'Streamline processes and optimize performance across your entire organisation.',
       image: heroImage,
       gradient: 'from-orange-500 to-red-500'
     }
@@ -41,7 +34,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center accenture-hero">
+      <section className="relative min-h-screen flex items-center justify-center aevance-hero">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl float-animation"></div>
           <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl float-animation" style={{animationDelay: '2s'}}></div>
@@ -52,7 +45,7 @@ const Home = () => {
           <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight">
             Professional Services
             <br />
-            <span className="accenture-text-gradient">
+            <span className="aevance-text-gradient">
               Reimagined
             </span>
           </h1>
@@ -61,7 +54,7 @@ const Home = () => {
             to accelerate your business transformation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="accenture-button text-lg px-8 py-6">
+            <Button asChild size="lg" className="aevance-button text-lg px-8 py-6">
               <Link to="/services">
                 Explore Services
                 <ChevronRight className="h-5 w-5" />
@@ -79,7 +72,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-              Our <span className="accenture-text-gradient">Expertise</span>
+              Our <span className="aevance-text-gradient">Expertise</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Comprehensive solutions designed to elevate your business to new heights
@@ -92,7 +85,7 @@ const Home = () => {
               return (
                 <div
                   key={index}
-                  className="accenture-card group relative overflow-hidden p-8 hover:accenture-glow"
+                  className="aevance-card group relative overflow-hidden p-8 hover:aevance-glow"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
@@ -135,13 +128,13 @@ const Home = () => {
       <section className="py-24 bg-card">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-6xl md:text-8xl font-bold text-foreground mb-6">
-            360° <span className="accenture-text-gradient">VALUE</span>
+            360° <span className="aevance-text-gradient">VALUE</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Every day, we embrace change and create value for all our 
-            stakeholders around the world.
+            stakeholders.
           </p>
-          <Button asChild className="accenture-button text-lg px-8 py-6">
+          <Button asChild className="aevance-button text-lg px-8 py-6">
             <Link to="/about">
               See our impact
               <ChevronRight className="h-5 w-5" />
@@ -151,13 +144,13 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 accenture-gradient">
+      <section className="py-24 aevance-gradient">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to <span className="font-bold">Transform</span> Your Business?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our expertise can drive your organization forward. 
+            Let's discuss how our expertise can drive your organisation forward. 
             Schedule a consultation today.
           </p>
           <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-primary hover:bg-white/90">
