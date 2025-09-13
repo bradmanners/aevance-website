@@ -144,10 +144,10 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 aevance-gradient">
+      <section className="py-24 aevance-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to <span className="font-bold">Transform</span> Your Business?
+            Ready to <span className="aevance-text-gradient">Transform Your Business?</span>
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Let's discuss how our expertise can drive your organisation forward. 
