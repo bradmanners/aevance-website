@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Twitter } from 'lucide-react'
 import logo from '../assets/Aevance_Logo_-_No_Text_V2_180x.svg'
 
 const Footer = () => {
@@ -68,12 +68,8 @@ const Footer = () => {
                 <span className="text-gray-300">hello@aevance.com</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-300">New York, NY</span>
+                <span className="text-gray-300">Brisbane, QLD</span>
               </li>
             </ul>
           </div>

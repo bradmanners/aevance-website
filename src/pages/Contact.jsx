@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin, Clock, Calendar, ChevronRight, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Clock, Calendar, ChevronRight, Linkedin, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 
 const Contact = () => {
@@ -46,7 +46,7 @@ const Contact = () => {
       {/* Contact Info Cards */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon
               const CardContent = (
@@ -116,26 +116,6 @@ const Contact = () => {
 
               <div className="flex items-center space-x-4 p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-lg font-bold text-foreground">Call Us</h4>
-                  <a 
-                    href="tel:+15551234567" 
-                    className="text-primary hover:text-primary/80 transition-colors text-lg font-medium"
-                  >
-                    +1 (555) 123-4567
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Mon-Fri, 9am-6pm EST
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
-                <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
                     <Calendar className="h-6 w-6 text-white" />
                   </div>
@@ -165,12 +145,12 @@ const Contact = () => {
             Other Ways to Connect
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
             <div className="aevance-card p-6">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Calendar className="h-6 w-6 text-white" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">Schedule a Call</h4>
+              <h4 className="font-bold text-foreground mb-2">Schedule a Meeting</h4>
               <p className="text-muted-foreground text-sm mb-4">
                 Book a consultation to discuss your specific needs
               </p>
@@ -179,22 +159,6 @@ const Contact = () => {
                   Book Consultation
                   <ChevronRight className="h-4 w-4" />
                 </Link>
-              </Button>
-            </div>
-            
-            <div className="aevance-card p-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-6 w-6 text-white" />
-              </div>
-              <h4 className="font-bold text-foreground mb-2">Emergency Support</h4>
-              <p className="text-muted-foreground text-sm mb-4">
-                Need immediate assistance? Call our priority line
-              </p>
-              <Button asChild className="aevance-button">
-                <a href="tel:+15551234567">
-                  Call Now
-                  <ChevronRight className="h-4 w-4" />
-                </a>
               </Button>
             </div>
             

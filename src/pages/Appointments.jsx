@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom'
-import { Calendar, Clock, Users, Video, Phone, MapPin, CheckCircle, Mail, ChevronRight } from 'lucide-react'
+import { Calendar, Clock, Users, Video, MapPin, CheckCircle, Mail, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 
 const Appointments = () => {
   const consultationTypes = [
     {
       id: 'discovery',
-      title: 'Discovery Call',
+      title: 'Discovery Meeting',
       duration: '30 minutes',
       price: 'Free',
       description: 'Initial consultation to understand your needs and challenges',
-      icon: Phone,
+      icon: Calendar,
       gradient: 'from-green-500 to-emerald-500'
     },
     {
@@ -42,7 +42,7 @@ const Appointments = () => {
     {
       icon: Video,
       title: 'Flexible Format',
-      description: 'Choose between video call, phone, or in-person meetings'
+      description: 'Choose between video call or in-person meetings'
     },
     {
       icon: Clock,
@@ -117,7 +117,7 @@ const Appointments = () => {
               Contact us directly to schedule your consultation. We'll work with you to find the perfect time and format.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="max-w-md mx-auto mb-8">
               <div className="flex items-center space-x-4 p-6 bg-card rounded-lg border border-border">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
@@ -137,26 +137,6 @@ const Appointments = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="flex items-center space-x-4 p-6 bg-card rounded-lg border border-border">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-                <div className="text-left">
-                  <h4 className="text-lg font-bold text-foreground">Call Us</h4>
-                  <a 
-                    href="tel:+15551234567" 
-                    className="text-primary hover:text-primary/80 transition-colors font-medium"
-                  >
-                    +1 (555) 123-4567
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Mon-Fri, 9am-6pm EST
-                  </p>
-                </div>
-              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -164,12 +144,6 @@ const Appointments = () => {
                 <a href="mailto:hello@aevance.com?subject=Consultation Booking Request&body=Hi, I'd like to schedule a consultation. Please let me know your availability.">
                   Email to Book
                   <ChevronRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <a href="tel:+15551234567">
-                  Call to Book
-                  <Phone className="h-4 w-4" />
                 </a>
               </Button>
             </div>
@@ -206,10 +180,10 @@ const Appointments = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 aevance-gradient">
+      <section className="py-16 aevance-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
+            Ready to <span className="aevance-text-gradient">Transform Your Business?</span>
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
             Don't wait - reach out today and let's start planning your transformation journey.

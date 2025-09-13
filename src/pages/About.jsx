@@ -12,7 +12,7 @@ const About = () => {
     {
       icon: Lightbulb,
       title: 'Innovation First',
-      description: 'Embracing cutting-edge technologies and methodologies to keep your organization ahead of the curve.'
+      description: 'Embracing cutting-edge technologies and methodologies to keep your organisation ahead of the curve.'
     },
     {
       icon: Shield,
@@ -44,7 +44,7 @@ const About = () => {
                 About <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Aevance</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                We are a premier professional services firm dedicated to empowering organizations 
+                We are a premier professional services firm dedicated to empowering organisations 
                 through strategic leadership, innovative technology solutions, and operational excellence.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -142,11 +142,11 @@ const About = () => {
                 Our <span className="font-semibold">Mission</span>
               </h2>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                To empower organizations with exceptional leadership, innovative technology solutions, 
+                To empower organisations with exceptional leadership, innovative technology solutions, 
                 and strategic guidance that drives sustainable growth and competitive advantage.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We believe that every organization has the potential to achieve extraordinary results. 
+                We believe that every organisation has the potential to achieve extraordinary results. 
                 Our role is to unlock that potential through expert guidance, proven methodologies, 
                 and unwavering commitment to excellence.
               </p>
