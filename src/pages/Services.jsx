@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Users, Brain, Smartphone, Settings, CheckCircle, Star } from 'lucide-react'
+import { ArrowRight, Users, Brain, Briefcase, Settings, CheckCircle, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import leadershipImage from '../assets/leadership-team.jpg'
 import aiImage from '../assets/ai-technology.jpg'
-import saasImage from '../assets/saas-development.webp'
+import projectImage from '../assets/modern-office.jpg'
 import consultingImage from '../assets/business-presentation.jpeg'
 
 const Services = () => {
@@ -55,26 +55,26 @@ const Services = () => {
       ]
     },
     {
-      id: 'saas-mobile',
-      icon: Smartphone,
-      title: 'SaaS & Mobile Development',
-      subtitle: 'Development • Maintenance • Support',
-      description: 'Full-stack development services for modern web and mobile applications.',
-      image: saasImage,
+      id: 'project-management',
+      icon: Briefcase,
+      title: 'Project & Program Management',
+      subtitle: 'Planning • Execution • Delivery',
+      description: 'Expert project and program management to ensure successful delivery of complex initiatives.',
+      image: projectImage,
       color: 'from-green-500 to-green-600',
       features: [
-        'Custom SaaS platform development',
-        'Native and cross-platform mobile apps',
-        'Cloud infrastructure and DevOps',
-        'API development and integration',
-        '24/7 maintenance and support services',
-        'Performance optimization and scaling'
+        'End-to-end project lifecycle management',
+        'Agile and traditional methodology expertise',
+        'Portfolio management and prioritization',
+        'Risk assessment and mitigation strategies',
+        'Stakeholder communication and reporting',
+        'Resource planning and optimization'
       ],
       benefits: [
-        'Faster time-to-market for digital products',
-        'Scalable, secure, and reliable solutions',
-        'Ongoing support and continuous improvement',
-        'Cost-effective development and maintenance'
+        'On-time and on-budget project delivery',
+        'Reduced project risks and improved outcomes',
+        'Enhanced team productivity and collaboration',
+        'Clear visibility and transparent reporting'
       ]
     },
     {
