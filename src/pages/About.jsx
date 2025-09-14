@@ -1,6 +1,8 @@
-import { CheckCircle, Target, Lightbulb, Shield } from 'lucide-react'
-import aboutImage from '../assets/modern-office.jpg'
-import teamImage from '../assets/leadership-team.jpg'
+import { CheckCircle, Target, Lightbulb, Shield, Briefcase, GraduationCap } from 'lucide-react'
+import aboutImage from '../assets/Brisbane.png'
+import teamImage from '../assets/Sydney.png'
+import simonImage from '../assets/SimonFennessy.png'
+import bradImage from '../assets/BradMancini.jpeg'
 
 const About = () => {
   const values = [
@@ -29,8 +31,7 @@ const About = () => {
   const stats = [
     { number: '50+', label: 'Successful Projects' },
     { number: '95%', label: 'Client Satisfaction' },
-    { number: '10+', label: 'Years Experience' },
-    { number: '24/7', label: 'Support Available' }
+    { number: '40+', label: 'Years Experience' }
   ]
 
   return (
@@ -68,7 +69,7 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
@@ -163,6 +164,94 @@ const About = () => {
                   <CheckCircle className="h-6 w-6 text-green-500" />
                   <span className="text-gray-700">Comprehensive development and support services</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our People Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+              Our <span className="font-semibold">People</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet the leadership team driving innovation and excellence at Aevance
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Simon Fennessy Profile */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9">
+                <img
+                  src={simonImage}
+                  alt="Simon Fennessy"
+                  className="w-full h-64 object-contain bg-gray-50"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                  Simon Fennessy
+                </h3>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Briefcase className="h-5 w-5 text-blue-600" />
+                  <span className="text-blue-600 font-medium">Executive Leader</span>
+                </div>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Simon brings over two decades of expertise in strategy, executive leadership, change management, operations, and business improvement. He holds an MBA from IMD in Switzerland, a Bachelor's degree in Economics and Finance from Curtin University and is a graduate of the Australian Institute of Company Directors.
+                </p>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Simon's professional experience spans telecommunications, technology-driven enhancements in customer processes, and infrastructure optimisation. He has held senior roles at Telstra, Orange, ninemsn, and Waveconn, where he delivered operational improvements and customer-focused business solutions.
+                </p>
+
+                <p className="text-gray-600 leading-relaxed">
+                  Based in Brisbane, Simon has a strong understanding of how technology can drive better customer outcomes and unlock superior business performance. He also possesses expertise in governance, risk management, and government relations.
+                </p>
+              </div>
+            </div>
+
+            {/* Brad Mancini Profile */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9">
+                <img
+                  src={bradImage}
+                  alt="Brad Mancini"
+                  className="w-full h-64 object-contain bg-gray-50"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                  Brad Mancini
+                </h3>
+                <div className="flex items-center space-x-2 mb-4">
+                  <Briefcase className="h-5 w-5 text-blue-600" />
+                  <span className="text-blue-600 font-medium">CTO</span>
+                </div>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  5 years of international experience in IT, telecommunications, public health, mining, construction, and government.
+                </p>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  A seasoned technology leader. Successfully delivered industry-shaping transformation programs exceeding $1.5 billion in value – improving services for millions of customers.
+                </p>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  An exceptional stakeholder manager, working closely with CEO leadership teams, enterprise clients, unions, government regulators and key suppliers.
+                </p>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Tertiary qualifications in Engineering, Finance, Business Administration, Strategic Procurement, Leadership, and Program Management.
+                </p>
+
+                <p className="text-gray-600 leading-relaxed">
+                  Recipient of CEO and COO Awards for excellence and outstanding contribution.
+                </p>
               </div>
             </div>
           </div>

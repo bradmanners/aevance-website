@@ -8,7 +8,6 @@ const Appointments = () => {
       id: 'discovery',
       title: 'Discovery Meeting',
       duration: '30 minutes',
-      price: 'Free',
       description: 'Initial consultation to understand your needs and challenges',
       icon: Calendar,
       gradient: 'from-green-500 to-emerald-500'
@@ -17,7 +16,6 @@ const Appointments = () => {
       id: 'strategy',
       title: 'Strategy Session',
       duration: '60 minutes',
-      price: '$299',
       description: 'Deep-dive strategic planning session with actionable recommendations',
       icon: Users,
       gradient: 'from-blue-500 to-cyan-500'
@@ -26,7 +24,6 @@ const Appointments = () => {
       id: 'workshop',
       title: 'Executive Workshop',
       duration: '2-4 hours',
-      price: '$999',
       description: 'Comprehensive workshop with your leadership team',
       icon: Video,
       gradient: 'from-purple-500 to-pink-500'
@@ -91,9 +88,8 @@ const Appointments = () => {
                     {type.title}
                   </h3>
                   
-                  <div className="flex justify-center items-center space-x-4 mb-4">
+                  <div className="flex justify-center items-center mb-4">
                     <span className="text-muted-foreground">{type.duration}</span>
-                    <span className="text-2xl font-bold text-primary">{type.price}</span>
                   </div>
                   
                   <p className="text-muted-foreground mb-6">

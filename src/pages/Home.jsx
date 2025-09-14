@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { ChevronRight, Users, Brain, Briefcase, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import heroImage from '../assets/consulting-meeting.jpg'
-import leadershipImage from '../assets/leadership-team.jpg'
+import leadershipImage from '../assets/Sydney.png'
 import aiImage from '../assets/ai-consulting.webp'
-import projectImage from '../assets/modern-office.jpg'
+import projectImage from '../assets/Brisbane.png'
 
 const Home = () => {
   const services = [
