@@ -55,11 +55,10 @@ const About = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl transform rotate-3"></div>
               <img
                 src={aboutImage}
                 alt="Modern office workspace"
-                className="relative rounded-3xl shadow-2xl w-full h-96 object-cover"
+                className="rounded-3xl shadow-2xl w-full h-96 object-cover"
               />
             </div>
           </div>
@@ -131,11 +130,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-3xl transform -rotate-3"></div>
               <img
                 src={teamImage}
                 alt="Leadership team collaboration"
-                className="relative rounded-3xl shadow-2xl w-full h-96 object-cover"
+                className="rounded-3xl shadow-2xl w-full h-96 object-cover"
               />
             </div>
             <div>

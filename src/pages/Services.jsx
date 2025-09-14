@@ -186,11 +186,10 @@ const Services = () => {
                   {/* Image */}
                   <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
                     <div className="relative">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-3xl transform ${isEven ? 'rotate-3' : '-rotate-3'} opacity-20`}></div>
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="relative rounded-3xl shadow-2xl w-full h-96 object-cover"
+                        className="rounded-3xl shadow-2xl w-full h-96 object-cover"
                       />
                     </div>
                   </div>
