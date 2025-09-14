@@ -198,7 +198,7 @@ const About = () => {
                 </h3>
                 <div className="flex items-center space-x-2 mb-4">
                   <Briefcase className="h-5 w-5 text-blue-600" />
-                  <span className="text-blue-600 font-medium">Executive Leader</span>
+                  <span className="text-blue-600 font-medium">CEO</span>
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
@@ -234,7 +234,7 @@ const About = () => {
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  5 years of international experience in IT, telecommunications, public health, mining, construction, and government.
+                  25 years of international experience in IT, telecommunications, public health, mining, construction, and government.
                 </p>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
