@@ -1,4 +1,4 @@
-name: Build and Deploy to Production Repository
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -24,11 +24,9 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Deploy to production repository
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        external_repository: bradmanners/aevance-website
-        publish_branch: main
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         cname: www.aevance.com
