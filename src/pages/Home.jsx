@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import { ChevronRight, Users, Brain, Smartphone, Settings } from 'lucide-react'
+import { ChevronRight, Users, Brain, Briefcase, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import heroImage from '../assets/consulting-meeting.jpg'
 import leadershipImage from '../assets/leadership-team.jpg'
 import aiImage from '../assets/ai-consulting.webp'
-import saasImage from '../assets/saas-development.webp'
+import projectImage from '../assets/modern-office.jpg'
 
 const Home = () => {
   const services = [
@@ -28,6 +28,13 @@ const Home = () => {
       description: 'Streamline processes and optimize performance across your entire organisation.',
       image: heroImage,
       gradient: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: Briefcase,
+      title: 'Project & Program Management',
+      description: 'Expert project and program management to ensure successful delivery of complex initiatives.',
+      image: projectImage,
+      gradient: 'from-green-500 to-emerald-500'
     }
   ]
 

@@ -12,7 +12,7 @@ const Services = () => {
       id: 'executive-leadership',
       icon: Users,
       title: 'Executive Leadership Services',
-      subtitle: 'Interim CEO • CMO • COO',
+      subtitle: 'Interim CEO • CMO • COO • CIO • CTO',
       description: 'Strategic leadership during critical transitions, transformations, and growth phases.',
       image: leadershipImage,
       color: 'from-blue-500 to-blue-600',
@@ -42,7 +42,7 @@ const Services = () => {
       features: [
         'AI strategy development and roadmap planning',
         'Machine learning model development and deployment',
-        'Process automation and intelligent workflows',
+        'Process re-engineering, automation and intelligent workflows',
         'Data analytics and predictive modeling',
         'AI ethics and governance frameworks',
         'Training and change management for AI adoption'
@@ -61,7 +61,7 @@ const Services = () => {
       subtitle: 'Planning • Execution • Delivery',
       description: 'Expert project and program management to ensure successful delivery of complex initiatives.',
       image: projectImage,
-      color: 'from-green-500 to-green-600',
+      color: 'from-blue-500 to-blue-600',
       features: [
         'End-to-end project lifecycle management',
         'Agile and traditional methodology expertise',
@@ -155,7 +155,7 @@ const Services = () => {
                       <div className="grid grid-cols-1 gap-3">
                         {service.features.map((feature, idx) => (
                           <div key={idx} className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700">{feature}</span>
                           </div>
                         ))}
@@ -168,7 +168,7 @@ const Services = () => {
                       <div className="grid grid-cols-1 gap-3">
                         {service.benefits.map((benefit, idx) => (
                           <div key={idx} className="flex items-start space-x-3">
-                            <Star className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                            <Star className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700">{benefit}</span>
                           </div>
                         ))}
