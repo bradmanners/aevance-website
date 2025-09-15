@@ -25,7 +25,7 @@ const Home = () => {
     {
       icon: Settings,
       title: 'Operational Excellence',
-      description: 'Streamline processes and optimize performance across your entire organisation.',
+      description: 'Streamline processes and optimise performance across your entire organisation.',
       image: heroImage,
       gradient: 'from-orange-500 to-red-500'
     },
@@ -138,7 +138,7 @@ const Home = () => {
             360° <span className="aevance-text-gradient">VALUE</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Every day, we embrace change and create value for all our 
+            Every day, we deliver change and create value for all our 
             stakeholders.
           </p>
           <Button asChild className="aevance-button text-lg px-8 py-6">
