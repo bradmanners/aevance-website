@@ -19,7 +19,7 @@ const Services = () => {
       features: [
         'Interim C-Suite executives with proven track records',
         'Strategic planning and execution leadership',
-        'Organizational transformation and change management',
+        'Organisational transformation and change management',
         'Crisis management and turnaround expertise',
         'Board-level reporting and stakeholder management',
         'Succession planning and leadership development'
@@ -65,10 +65,10 @@ const Services = () => {
       features: [
         'End-to-end project lifecycle management',
         'Agile and traditional methodology expertise',
-        'Portfolio management and prioritization',
+        'Portfolio management and prioritisation',
         'Risk assessment and mitigation strategies',
         'Stakeholder communication and reporting',
-        'Resource planning and optimization'
+        'Resource planning and optimisation'
       ],
       benefits: [
         'On-time and on-budget project delivery',
@@ -81,12 +81,12 @@ const Services = () => {
       id: 'operational-excellence',
       icon: Settings,
       title: 'Operational Excellence',
-      subtitle: 'Process Optimization • Performance Management',
-      description: 'Streamline operations and optimize performance across your entire organization.',
+      subtitle: 'Process Optimisation • Performance Management',
+      description: 'Streamline operations and optimise performance across your entire organisation.',
       image: consultingImage,
       color: 'from-orange-500 to-orange-600',
       features: [
-        'Business process analysis and optimization',
+        'Business process analysis and optimisation',
         'Performance management systems',
         'Quality assurance and compliance frameworks',
         'Supply chain and operations consulting',
@@ -112,7 +112,7 @@ const Services = () => {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Comprehensive professional services designed to accelerate your business transformation 
-            and drive sustainable growth across all areas of your organization.
+            and drive sustainable growth across all areas of your organisation.
           </p>
           <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
             <Link to="/appointments">
