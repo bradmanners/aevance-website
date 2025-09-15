@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, MapPin, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Linkedin } from 'lucide-react'
 import logo from '../assets/Aevance_Logo_-_No_Text_V2_180x.svg'
 
 const Footer = () => {
@@ -20,9 +20,6 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>

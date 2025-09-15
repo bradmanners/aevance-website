@@ -1,4 +1,4 @@
-import { CheckCircle, Target, Lightbulb, Shield, Briefcase, GraduationCap } from 'lucide-react'
+import { CheckCircle, Target, Lightbulb, Shield, Briefcase, GraduationCap, ExternalLink } from 'lucide-react'
 import aboutImage from '../assets/Brisbane-1360154521.jpg'
 import teamImage from '../assets/Sydney-1074255534.jpg'
 import simonImage from '../assets/Simon_wtbg.png'
@@ -196,7 +196,7 @@ const About = () => {
                 </h3>
                 <div className="flex items-center space-x-2 mb-4">
                   <Briefcase className="h-5 w-5 text-blue-600" />
-                  <span className="text-blue-600 font-medium">CEO</span>
+                  <span className="text-blue-600 font-medium">Managing Director</span>
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
@@ -207,9 +207,19 @@ const About = () => {
                   His career spans telecommunications, technology-enabled customer process improvements, and infrastructure optimisation. He has held senior roles at Orange, ninemsn, Telstra, InfraCo, Telstra Purple, and Waveconn, delivering operational improvements and customer-focused business solutions.
                 </p>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   Simon has expertise in governance, risk management, and government relations, with a focus on using technology to improve customer outcomes and business performance.
                 </p>
+
+                <a
+                  href="https://www.linkedin.com/in/simon-fennessy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                  <span className="font-medium">LinkedIn Profile</span>
+                </a>
               </div>
             </div>
 
@@ -244,6 +254,16 @@ Brad has worked with CEOs, enterprise clients, unions, government regulators, an
                   He holds tertiary qualifications in Engineering, Finance, Business Administration, Strategic Procurement, Leadership, and Program Management.
 Brad has received CEO and COO awards for excellence and contribution.
                 </p>
+
+                <a
+                  href="https://www.linkedin.com/in/bradmancini/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                  <span className="font-medium">LinkedIn Profile</span>
+                </a>
               </div>
             </div>
           </div>

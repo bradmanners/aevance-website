@@ -57,7 +57,7 @@ const Home = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Expert leadership, cutting-edge AI consulting, and world-class development services 
+            Expert leadership, cutting-edge AI consulting, and world-class services 
             to accelerate your business transformation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

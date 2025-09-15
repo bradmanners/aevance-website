@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, MapPin, Clock, Calendar, ChevronRight, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Clock, Calendar, ChevronRight, Linkedin } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 
 const Contact = () => {
@@ -173,9 +173,6 @@ const Contact = () => {
               <div className="flex justify-center space-x-3">
                 <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <Linkedin className="h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <Twitter className="h-4 w-4" />
                 </Button>
               </div>
             </div>

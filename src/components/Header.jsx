@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
-import logo from '../assets/Aevance_Logo_-_No_Text_V2_180x.svg'
+import logo from '../assets/Aevance_Logo_Colour 515x512.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="Aevance" className="h-8 w-8 filter brightness-0 invert" />
+            <img src={logo} alt="Aevance" className="h-8 w-8" />
             <span className="text-xl font-semibold text-foreground">Aevance</span>
           </Link>
 
