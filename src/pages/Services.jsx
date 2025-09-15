@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Users, Brain, Briefcase, Settings, CheckCircle, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
-import leadershipImage from '../assets/Sydney.png'
+import leadershipImage from '../assets/Melbourne-534059684.jpg'
 import aiImage from '../assets/ai-technology.jpg'
-import projectImage from '../assets/Brisbane.png'
-import consultingImage from '../assets/business-presentation.jpeg'
+import projectImage from '../assets/TelcoTower-2215978485.jpg'
+import consultingImage from '../assets/Sydney-516782031.jpg'
 
 const Services = () => {
   const services = [
@@ -189,7 +189,7 @@ const Services = () => {
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="rounded-3xl shadow-2xl w-full h-96 object-cover"
+                        className="rounded-3xl shadow-2xl w-full h-[600px] object-cover"
                       />
                     </div>
                   </div>

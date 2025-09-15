@@ -1,8 +1,8 @@
 import { CheckCircle, Target, Lightbulb, Shield, Briefcase, GraduationCap } from 'lucide-react'
-import aboutImage from '../assets/Brisbane.png'
-import teamImage from '../assets/Sydney.png'
-import simonImage from '../assets/SimonFennessy.png'
-import bradImage from '../assets/BradMancini.jpeg'
+import aboutImage from '../assets/Brisbane-1360154521.jpg'
+import teamImage from '../assets/Sydney-1074255534.jpg'
+import simonImage from '../assets/Simon_wtbg.png'
+import bradImage from '../assets/Brad_wtbg.png'
 
 const About = () => {
   const values = [
@@ -187,7 +187,7 @@ const About = () => {
                 <img
                   src={simonImage}
                   alt="Simon Fennessy"
-                  className="w-full h-64 object-contain bg-gray-50"
+                  className="w-full h-64 object-contain"
                 />
               </div>
               <div className="p-8">
@@ -200,15 +200,15 @@ const About = () => {
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Simon brings over two decades of expertise in strategy, executive leadership, change management, operations, and business improvement. He holds an MBA from IMD in Switzerland, a Bachelor's degree in Economics and Finance from Curtin University and is a graduate of the Australian Institute of Company Directors.
+                  Simon has more than 20 years of experience in strategy, executive leadership, change management, operations, and business improvement. He holds an MBA from IMD in Switzerland, a Bachelor of Economics and Finance from Curtin University, and is a graduate of the Australian Institute of Company Directors.
                 </p>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Simon's professional experience spans telecommunications, technology-driven enhancements in customer processes, and infrastructure optimisation. He has held senior roles at Telstra, Orange, ninemsn, and Waveconn, where he delivered operational improvements and customer-focused business solutions.
+                  His career spans telecommunications, technology-enabled customer process improvements, and infrastructure optimisation. He has held senior roles at Orange, ninemsn, Telstra, InfraCo, Telstra Purple, and Waveconn, delivering operational improvements and customer-focused business solutions.
                 </p>
 
                 <p className="text-gray-600 leading-relaxed">
-                  Based in Brisbane, Simon has a strong understanding of how technology can drive better customer outcomes and unlock superior business performance. He also possesses expertise in governance, risk management, and government relations.
+                  Simon has expertise in governance, risk management, and government relations, with a focus on using technology to improve customer outcomes and business performance.
                 </p>
               </div>
             </div>
@@ -219,7 +219,7 @@ const About = () => {
                 <img
                   src={bradImage}
                   alt="Brad Mancini"
-                  className="w-full h-64 object-contain bg-gray-50"
+                  className="w-full h-64 object-contain"
                 />
               </div>
               <div className="p-8">
@@ -232,23 +232,17 @@ const About = () => {
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  25 years of international experience in IT, telecommunications, public health, mining, construction, and government.
+                  Brad has 25 years of international experience across IT, telecommunications, public health, mining, construction, and government.
                 </p>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  A seasoned technology leader. Successfully delivered industry-shaping transformation programs exceeding $1.5 billion in value – improving services for millions of customers.
+                  He has led transformation programs valued at more than $1.5 billion, delivering improved services for millions of customers.
+Brad has worked with CEOs, enterprise clients, unions, government regulators, and suppliers to manage stakeholders and achieve outcomes.
                 </p>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  An exceptional stakeholder manager, working closely with CEO leadership teams, enterprise clients, unions, government regulators and key suppliers.
-                </p>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Tertiary qualifications in Engineering, Finance, Business Administration, Strategic Procurement, Leadership, and Program Management.
-                </p>
-
-                <p className="text-gray-600 leading-relaxed">
-                  Recipient of CEO and COO Awards for excellence and outstanding contribution.
+                  He holds tertiary qualifications in Engineering, Finance, Business Administration, Strategic Procurement, Leadership, and Program Management.
+Brad has received CEO and COO awards for excellence and contribution.
                 </p>
               </div>
             </div>
