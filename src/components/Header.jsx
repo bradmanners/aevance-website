@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
-import logo from '../assets/Aevance_Logo_Colour 515x512.png'
+import logo from '../assets/Aevance_Logo_Colour_515x512.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
