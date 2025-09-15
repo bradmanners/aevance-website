@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Mail, MapPin, Linkedin } from 'lucide-react'
-import logo from '../assets/Aevance_Logo_-_No_Text_V2_180x.svg'
+import logo from '../assets/Aevance_Logo_Colour_515x512.png'
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src={logo} alt="Aevance" className="h-8 w-8 filter invert" />
+              <img src={logo} alt="Aevance" className="h-8 w-8" />
               <span className="text-xl font-semibold">Aevance</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
@@ -18,7 +18,12 @@ const Footer = () => {
               AI consulting, and comprehensive technology solutions to drive your business forward.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.linkedin.com/company/aevance/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
