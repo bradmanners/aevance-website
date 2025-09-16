@@ -147,16 +147,20 @@ const Contact = () => {
           
           <div className="flex justify-center mb-12">
             <div className="aevance-card p-6 max-w-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Linkedin className="h-6 w-6 text-white" />
-              </div>
+              <a href="https://www.linkedin.com/company/aevance" target="_blank" rel="noopener noreferrer">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-transform">
+                  <Linkedin className="h-6 w-6 text-white" />
+                </div>
+              </a>
               <h4 className="font-bold text-foreground mb-2">Follow Us</h4>
               <p className="text-muted-foreground text-sm mb-4">
                 Stay updated with our latest insights and news
               </p>
               <div className="flex justify-center space-x-3">
-                <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <Linkedin className="h-4 w-4" />
+                <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
+                  <a href="https://www.linkedin.com/company/aevance" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-4 w-4" />
+                  </a>
                 </Button>
               </div>
             </div>
