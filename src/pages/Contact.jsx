@@ -145,24 +145,8 @@ const Contact = () => {
             Other Ways to Connect
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
-            <div className="aevance-card p-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Calendar className="h-6 w-6 text-white" />
-              </div>
-              <h4 className="font-bold text-foreground mb-2">Schedule a Meeting</h4>
-              <p className="text-muted-foreground text-sm mb-4">
-                Book a consultation to discuss your specific needs
-              </p>
-              <Button asChild className="aevance-button">
-                <Link to="/appointments">
-                  Book Consultation
-                  <ChevronRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            
-            <div className="aevance-card p-6">
+          <div className="flex justify-center mb-12">
+            <div className="aevance-card p-6 max-w-sm">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Linkedin className="h-6 w-6 text-white" />
               </div>
