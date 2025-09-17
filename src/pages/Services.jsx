@@ -12,7 +12,7 @@ const Services = () => {
       id: 'executive-leadership',
       icon: Users,
       title: 'Executive Leadership Services',
-      subtitle: 'Interim CEO • CMO • COO • CIO • CTO',
+      subtitle: 'Interim Executive Services',
       description: 'Strategic leadership during critical transitions, transformations, and growth phases.',
       image: leadershipImage,
       color: 'from-blue-500 to-blue-600',

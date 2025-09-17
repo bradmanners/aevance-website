@@ -11,7 +11,7 @@ const Home = () => {
     {
       icon: Users,
       title: 'Executive Leadership',
-      description: 'Interim CEO, CMO, and COO services to guide your organisation through critical transitions.',
+      description: 'Interim services to guide your organisation through critical transitions.',
       image: leadershipImage,
       gradient: 'from-purple-500 to-pink-500'
     },
