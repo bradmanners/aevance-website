@@ -10,10 +10,32 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aevance - Professional Services & Consulting</title>
-    <script type="module" crossorigin src="/assets/index-CCx82wvQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C_uJV1Vn.css">
+    <script type="module" crossorigin src="/assets/index-DnUvEzrH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CAGyx2F5.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, decoded + l.hash);
+        } else if (l.search) {
+          var params = new URLSearchParams(l.search);
+          var path = params.get("p");
+          if (path) {
+            var query = params.get("q");
+            var target = "/" + path + (query ? "?" + query : "") + l.hash;
+            window.history.replaceState(null, null, target);
+          }
+        }
+      })(window.location);
+    </script>
   </body>
 </html>
