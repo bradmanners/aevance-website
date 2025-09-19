@@ -2,9 +2,18 @@ import { Link } from 'react-router-dom'
 import { ChevronRight, Users, Brain, Briefcase, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import heroImage from '../assets/consulting-meeting.jpg'
-import leadershipImage from '../assets/Sydney.png'
 import aiImage from '../assets/ai-consulting.webp'
-import projectImage from '../assets/Brisbane.png'
+
+const responsiveImages = {
+  leadership: {
+    src: '/images/home-leadership-1200.webp',
+    srcSet: '/images/home-leadership-600.webp 600w, /images/home-leadership-1200.webp 1200w',
+  },
+  project: {
+    src: '/images/home-project-1200.webp',
+    srcSet: '/images/home-project-600.webp 600w, /images/home-project-1200.webp 1200w',
+  },
+}
 
 const Home = () => {
   const services = [
@@ -12,28 +21,28 @@ const Home = () => {
       icon: Users,
       title: 'Executive Leadership',
       description: 'Interim services to guide your organisation through critical transitions.',
-      image: leadershipImage,
+      image: responsiveImages.leadership,
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       icon: Brain,
       title: 'AI Consulting',
       description: 'Strategic AI implementation and consulting to transform your business operations.',
-      image: aiImage,
+      image: { src: aiImage },
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Settings,
       title: 'Operational Excellence',
       description: 'Streamline processes and optimise performance across your entire organisation.',
-      image: heroImage,
+      image: { src: heroImage },
       gradient: 'from-orange-500 to-red-500'
     },
     {
       icon: Briefcase,
       title: 'Project & Program Management',
       description: 'Expert project and program management to ensure successful delivery of complex initiatives.',
-      image: projectImage,
+      image: responsiveImages.project,
       gradient: 'from-green-500 to-emerald-500'
     }
   ]
@@ -97,9 +106,12 @@ const Home = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
                     <img
-                      src={service.image}
+                      src={service.image?.src}
+                      srcSet={service.image?.srcSet}
+                      sizes="(min-width: 1024px) 40vw, 100vw"
                       alt={service.title}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   
@@ -173,4 +185,3 @@ const Home = () => {
 }
 
 export default Home
-

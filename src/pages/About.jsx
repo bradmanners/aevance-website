@@ -1,8 +1,23 @@
-import { CheckCircle, Target, Lightbulb, Shield, Briefcase, GraduationCap, ExternalLink } from 'lucide-react'
-import aboutImage from '../assets/Brisbane-1360154521.jpg'
-import teamImage from '../assets/Sydney-1074255534.jpg'
-import simonImage from '../assets/Simon_wtbg.png'
-import bradImage from '../assets/Brad_wtbg.png'
+import { CheckCircle, Target, Lightbulb, Shield, Briefcase, ExternalLink } from 'lucide-react'
+
+const responsiveImages = {
+  hero: {
+    src: '/images/about-hero-1600.webp',
+    srcSet: '/images/about-hero-960.webp 960w, /images/about-hero-1600.webp 1600w, /images/about-hero-2000.webp 2000w',
+  },
+  mission: {
+    src: '/images/about-mission-1600.webp',
+    srcSet: '/images/about-mission-960.webp 960w, /images/about-mission-1600.webp 1600w, /images/about-mission-2000.webp 2000w',
+  },
+  simon: {
+    src: '/images/team-simon-960.webp',
+    srcSet: '/images/team-simon-480.webp 480w, /images/team-simon-960.webp 960w',
+  },
+  brad: {
+    src: '/images/team-brad-960.webp',
+    srcSet: '/images/team-brad-480.webp 480w, /images/team-brad-960.webp 960w',
+  },
+}
 
 const About = () => {
   const values = [
@@ -55,9 +70,12 @@ const About = () => {
             </div>
             <div className="relative">
               <img
-                src={aboutImage}
+                src={responsiveImages.hero.src}
+                srcSet={responsiveImages.hero.srcSet}
+                sizes="(min-width: 1024px) 45vw, 90vw"
                 alt="Modern office workspace"
                 className="rounded-3xl shadow-2xl w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -130,9 +148,12 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img
-                src={teamImage}
+                src={responsiveImages.mission.src}
+                srcSet={responsiveImages.mission.srcSet}
+                sizes="(min-width: 1024px) 45vw, 90vw"
                 alt="Leadership team collaboration"
                 className="rounded-3xl shadow-2xl w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -182,11 +203,14 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Simon Fennessy Profile */}
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-[16/9]">
                 <img
-                  src={simonImage}
+                  src={responsiveImages.simon.src}
+                  srcSet={responsiveImages.simon.srcSet}
+                  sizes="(min-width: 1024px) 320px, 80vw"
                   alt="Simon Fennessy"
-                  className="w-full h-64 object-contain"
+                  className="w-full h-full object-contain"
+                  loading="lazy"
                 />
               </div>
               <div className="p-8">
@@ -224,11 +248,14 @@ const About = () => {
 
             {/* Brad Mancini Profile */}
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-[16/9]">
                 <img
-                  src={bradImage}
+                  src={responsiveImages.brad.src}
+                  srcSet={responsiveImages.brad.srcSet}
+                  sizes="(min-width: 1024px) 320px, 80vw"
                   alt="Brad Mancini"
-                  className="w-full h-64 object-contain"
+                  className="w-full h-full object-contain"
+                  loading="lazy"
                 />
               </div>
               <div className="p-8">
@@ -273,4 +300,3 @@ Brad has received CEO and COO awards for excellence and contribution.
 }
 
 export default About
-

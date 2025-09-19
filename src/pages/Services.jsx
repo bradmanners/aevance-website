@@ -1,10 +1,22 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Users, Brain, Briefcase, Settings, CheckCircle, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
-import leadershipImage from '../assets/Melbourne-534059684.jpg'
 import aiImage from '../assets/ai-technology.jpg'
-import projectImage from '../assets/TelcoTower-2215978485.jpg'
-import consultingImage from '../assets/Sydney-516782031.jpg'
+
+const responsiveImages = {
+  leadership: {
+    src: '/images/services-leadership-1600.webp',
+    srcSet: '/images/services-leadership-960.webp 960w, /images/services-leadership-1600.webp 1600w, /images/services-leadership-2000.webp 2000w',
+  },
+  program: {
+    src: '/images/services-program-1600.webp',
+    srcSet: '/images/services-program-960.webp 960w, /images/services-program-1600.webp 1600w, /images/services-program-2000.webp 2000w',
+  },
+  operations: {
+    src: '/images/services-operations-1600.webp',
+    srcSet: '/images/services-operations-960.webp 960w, /images/services-operations-1600.webp 1600w, /images/services-operations-2000.webp 2000w',
+  },
+}
 
 const Services = () => {
   const services = [
@@ -14,7 +26,7 @@ const Services = () => {
       title: 'Executive Leadership Services',
       subtitle: 'Interim Executive Services',
       description: 'Strategic leadership during critical transitions, transformations, and growth phases.',
-      image: leadershipImage,
+      image: responsiveImages.leadership,
       color: 'from-blue-500 to-blue-600',
       features: [
         'Interim C-Suite executives with proven track records',
@@ -37,7 +49,7 @@ const Services = () => {
       title: 'AI Consulting & Strategy',
       subtitle: 'Artificial Intelligence • Machine Learning • Automation',
       description: 'Transform your business with strategic AI implementation and intelligent automation.',
-      image: aiImage,
+      image: { src: aiImage },
       color: 'from-purple-500 to-purple-600',
       features: [
         'AI strategy development and roadmap planning',
@@ -60,7 +72,7 @@ const Services = () => {
       title: 'Project & Program Management',
       subtitle: 'Planning • Execution • Delivery',
       description: 'Expert project and program management to ensure successful delivery of complex initiatives.',
-      image: projectImage,
+      image: responsiveImages.program,
       color: 'from-blue-500 to-blue-600',
       features: [
         'End-to-end project lifecycle management',
@@ -83,7 +95,7 @@ const Services = () => {
       title: 'Operational Excellence',
       subtitle: 'Process Optimisation • Performance Management',
       description: 'Streamline operations and optimise performance across your entire organisation.',
-      image: consultingImage,
+      image: responsiveImages.operations,
       color: 'from-orange-500 to-orange-600',
       features: [
         'Business process analysis and optimisation',
@@ -187,9 +199,12 @@ const Services = () => {
                   <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
                     <div className="relative">
                       <img
-                        src={service.image}
+                        src={service.image?.src}
+                        srcSet={service.image?.srcSet}
+                        sizes="(min-width: 1024px) 45vw, 90vw"
                         alt={service.title}
                         className="rounded-3xl shadow-2xl w-full h-[600px] object-cover"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -227,4 +242,3 @@ const Services = () => {
 }
 
 export default Services
-
