@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { CheckCircle, Target, Lightbulb, Shield, Briefcase, ExternalLink } from 'lucide-react'
 
 const responsiveImages = {
@@ -19,279 +20,218 @@ const responsiveImages = {
   },
 }
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] } },
+}
+
+const values = [
+  { icon: Target, title: 'Strategic Excellence', description: 'Precise, results-driven solutions that align with your objectives and drive measurable outcomes.' },
+  { icon: Lightbulb, title: 'Innovation First', description: 'Embracing modern technologies and methodologies to keep your organisation ahead of the curve.' },
+  { icon: Shield, title: 'Trusted Partnership', description: 'Long-term relationships built on transparency, reliability, and commitment to your success.' },
+  { icon: CheckCircle, title: 'Proven Results', description: 'A track record of consistent, exceptional outcomes across diverse industries.' },
+]
+
+const stats = [
+  { number: '50+', label: 'Successful Projects' },
+  { number: '95%', label: 'Client Satisfaction' },
+  { number: '40+', label: 'Years Combined Experience' },
+]
+
+const people = [
+  {
+    name: 'Simon Fennessy',
+    role: 'Managing Director',
+    image: responsiveImages.simon,
+    href: 'https://www.linkedin.com/in/simon-fennessy/',
+    bio: [
+      'Simon has more than 20 years of experience in strategy, executive leadership, change management, operations, and business improvement. He holds an MBA from IMD in Switzerland, a Bachelor of Economics and Finance from Curtin University, and is a graduate of the Australian Institute of Company Directors.',
+      'His career spans telecommunications, technology-enabled customer process improvements, and infrastructure optimisation. He has held senior roles at Orange, ninemsn, Telstra, InfraCo, Telstra Purple, and Waveconn, delivering operational improvements and customer-focused business solutions.',
+      'Simon has expertise in governance, risk management, and government relations, with a focus on using technology to improve customer outcomes and business performance.',
+    ],
+  },
+  {
+    name: 'Brad Mancini',
+    role: 'Director and CTO',
+    image: responsiveImages.brad,
+    href: 'https://www.linkedin.com/in/bradmancini/',
+    bio: [
+      'Brad has 25 years of international experience across IT, telecommunications, public health, mining, construction, and government.',
+      'He has led transformation programs valued at more than $1.5 billion, delivering improved services for millions of customers, working with CEOs, enterprise clients, unions, government regulators, and suppliers to manage stakeholders and achieve outcomes.',
+      'He holds tertiary qualifications in Engineering, Finance, Business Administration, Strategic Procurement, Leadership, and Program Management, and has received CEO and COO awards for excellence and contribution.',
+    ],
+  },
+]
+
 const About = () => {
-  const values = [
-    {
-      icon: Target,
-      title: 'Strategic Excellence',
-      description: 'We deliver precise, results-driven solutions that align with your business objectives and drive measurable outcomes.'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation First',
-      description: 'Embracing cutting-edge technologies and methodologies to keep your organisation ahead of the curve.'
-    },
-    {
-      icon: Shield,
-      title: 'Trusted Partnership',
-      description: 'Building long-term relationships based on transparency, reliability, and unwavering commitment to your success.'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Proven Results',
-      description: 'Our track record speaks for itself - consistent delivery of exceptional outcomes across diverse industries.'
-    }
-  ]
-
-  const stats = [
-    { number: '50+', label: 'Successful Projects' },
-    { number: '95%', label: 'Client Satisfaction' },
-    { number: '40+', label: 'Years Experience' }
-  ]
-
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-6">
-                About <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Aevance</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                We are a professional services firm providing strategic leadership, innovative technology solutions, and operational excellence.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Founded on the principles of integrity, innovation, and impact, Aevance bridges the gap 
-                between vision and execution, helping businesses navigate complex challenges and achieve 
-                sustainable growth.
-              </p>
-            </div>
-            <div className="relative">
-              <img
-                src={responsiveImages.hero.src}
-                srcSet={responsiveImages.hero.srcSet}
-                sizes="(min-width: 1024px) 45vw, 90vw"
-                alt="Modern office workspace"
-                className="rounded-3xl shadow-2xl w-full h-96 object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-              Our <span className="font-semibold">Values</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do and every decision we make
+      {/* Hero */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
+          <motion.div variants={fadeUp} initial="hidden" animate="visible">
+            <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl">
+              About <span className="gradient-text">Aevance</span>
+            </h1>
+            <p className="mb-6 text-xl leading-relaxed text-muted-foreground">
+              A professional services firm providing strategic leadership, AI and technology solutions, and
+              operational excellence.
             </p>
-          </div>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Founded on integrity, innovation, and impact, Aevance bridges the gap between vision and
+              execution — helping businesses navigate complex challenges and achieve sustainable growth.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="overflow-hidden rounded-2xl border border-border"
+          >
+            <img
+              src={responsiveImages.hero.src}
+              srcSet={responsiveImages.hero.srcSet}
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              alt="Aevance workspace"
+              className="h-96 w-full object-cover"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => {
-              const IconComponent = value.icon
+      {/* Stats */}
+      <section className="py-12">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 px-6 md:grid-cols-3">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: i * 0.1 }}
+              className="text-center"
+            >
+              <div className="mb-2 text-5xl font-bold gradient-text">{stat.number}</div>
+              <div className="font-medium text-muted-foreground">{stat.label}</div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Our <span className="gradient-text">values</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">The principles that guide every decision we make.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {values.map((value, i) => {
+              const Icon = value.icon
               return (
-                <div
-                  key={index}
-                  className="group p-8 rounded-3xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                        <IconComponent className="h-6 w-6 text-white" />
-                      </div>
+                <motion.div key={value.title} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ delay: i * 0.08 }}>
+                  <div className="aevance-card card-glow flex h-full items-start gap-4 p-8">
+                    <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
+                      <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                        {value.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {value.description}
-                      </p>
+                      <h3 className="mb-2 text-xl font-semibold text-foreground">{value.title}</h3>
+                      <p className="leading-relaxed text-muted-foreground">{value.description}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img
-                src={responsiveImages.mission.src}
-                srcSet={responsiveImages.mission.srcSet}
-                sizes="(min-width: 1024px) 45vw, 90vw"
-                alt="Leadership team collaboration"
-                className="rounded-3xl shadow-2xl w-full h-96 object-cover"
-                loading="lazy"
-              />
+      {/* Mission */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
+          <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }} className="order-2 overflow-hidden rounded-2xl border border-border lg:order-1">
+            <img
+              src={responsiveImages.mission.src}
+              srcSet={responsiveImages.mission.srcSet}
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              alt="Leadership collaboration"
+              className="h-96 w-full object-cover"
+              loading="lazy"
+            />
+          </motion.div>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="order-1 lg:order-2">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
+              Our <span className="gradient-text">mission</span>
+            </h2>
+            <p className="mb-6 text-xl leading-relaxed text-muted-foreground">
+              To empower organisations with exceptional leadership, AI and technology solutions, and strategic
+              guidance that drives sustainable growth and competitive advantage.
+            </p>
+            <div className="space-y-4">
+              {[
+                'Strategic leadership and interim executive services',
+                'AI and technology consulting',
+                'Comprehensive delivery and program management',
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-primary" />
+                  <span className="text-foreground">{item}</span>
+                </div>
+              ))}
             </div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-                Our <span className="font-semibold">Mission</span>
-              </h2>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                To empower organisations with exceptional leadership, innovative technology solutions, 
-                and strategic guidance that drives sustainable growth and competitive advantage.
-              </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We believe that every organisation has the potential to achieve extraordinary results. 
-                Our role is to unlock that potential through expert guidance, proven methodologies, 
-                and unwavering commitment to excellence.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500" />
-                  <span className="text-gray-700">Strategic leadership and interim executive services</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500" />
-                  <span className="text-gray-700">Cutting-edge AI and technology consulting</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500" />
-                  <span className="text-gray-700">Comprehensive development and support services</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Our People Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-              Our <span className="font-semibold">People</span>
+      {/* People */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Our <span className="gradient-text">people</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the leadership team driving innovation and excellence at Aevance
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Simon Fennessy Profile */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div className="aspect-[16/9]">
-                <img
-                  src={responsiveImages.simon.src}
-                  srcSet={responsiveImages.simon.srcSet}
-                  sizes="(min-width: 1024px) 320px, 80vw"
-                  alt="Simon Fennessy"
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                  Simon Fennessy
-                </h3>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Briefcase className="h-5 w-5 text-blue-600" />
-                  <span className="text-blue-600 font-medium">Managing Director</span>
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">The leadership team driving excellence at Aevance.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {people.map((p, i) => (
+              <motion.div key={p.name} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ delay: i * 0.1 }}>
+                <div className="aevance-card h-full overflow-hidden">
+                  <div className="aspect-[16/9] border-b border-border bg-card">
+                    <img
+                      src={p.image.src}
+                      srcSet={p.image.srcSet}
+                      sizes="(min-width: 1024px) 560px, 90vw"
+                      alt={p.name}
+                      className="h-full w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="mb-2 text-2xl font-semibold text-foreground">{p.name}</h3>
+                    <div className="mb-4 flex items-center gap-2">
+                      <Briefcase className="h-5 w-5 text-primary" />
+                      <span className="font-medium text-primary">{p.role}</span>
+                    </div>
+                    {p.bio.map((para, idx) => (
+                      <p key={idx} className="mb-4 leading-relaxed text-muted-foreground">{para}</p>
+                    ))}
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                      <span>LinkedIn Profile</span>
+                    </a>
+                  </div>
                 </div>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Simon has more than 20 years of experience in strategy, executive leadership, change management, operations, and business improvement. He holds an MBA from IMD in Switzerland, a Bachelor of Economics and Finance from Curtin University, and is a graduate of the Australian Institute of Company Directors.
-                </p>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  His career spans telecommunications, technology-enabled customer process improvements, and infrastructure optimisation. He has held senior roles at Orange, ninemsn, Telstra, InfraCo, Telstra Purple, and Waveconn, delivering operational improvements and customer-focused business solutions.
-                </p>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Simon has expertise in governance, risk management, and government relations, with a focus on using technology to improve customer outcomes and business performance.
-                </p>
-
-                <a
-                  href="https://www.linkedin.com/in/simon-fennessy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
-                >
-                  <ExternalLink className="h-5 w-5" />
-                  <span className="font-medium">LinkedIn Profile</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Brad Mancini Profile */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div className="aspect-[16/9]">
-                <img
-                  src={responsiveImages.brad.src}
-                  srcSet={responsiveImages.brad.srcSet}
-                  sizes="(min-width: 1024px) 320px, 80vw"
-                  alt="Brad Mancini"
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                  Brad Mancini
-                </h3>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Briefcase className="h-5 w-5 text-blue-600" />
-                  <span className="text-blue-600 font-medium">Director and CTO</span>
-                </div>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Brad has 25 years of international experience across IT, telecommunications, public health, mining, construction, and government.
-                </p>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  He has led transformation programs valued at more than $1.5 billion, delivering improved services for millions of customers.
-Brad has worked with CEOs, enterprise clients, unions, government regulators, and suppliers to manage stakeholders and achieve outcomes.
-                </p>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  He holds tertiary qualifications in Engineering, Finance, Business Administration, Strategic Procurement, Leadership, and Program Management.
-Brad has received CEO and COO awards for excellence and contribution.
-                </p>
-
-                <a
-                  href="https://www.linkedin.com/in/bradmancini/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
-                >
-                  <ExternalLink className="h-5 w-5" />
-                  <span className="font-medium">LinkedIn Profile</span>
-                </a>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

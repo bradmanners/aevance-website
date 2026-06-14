@@ -39,149 +39,183 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* atmosphérique accents (for from-/to-/text- utilities) */
+  --color-accent-teal: #5eead4;
+  --color-accent-violet: #a78bfa;
 }
 
+/* ─── atmosphérique palette — teal on near-black ─── */
 :root {
-  --radius: 0.5rem;
-  /* Aevance-inspired dark theme */
-  --background: oklch(0.08 0 0); /* Very dark background */
-  --foreground: oklch(0.98 0 0); /* White text */
-  --card: oklch(0.12 0 0); /* Dark card background */
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.65 0.25 320); /* Aevance purple */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.15 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.15 0 0);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.65 0.25 320); /* Aevance purple */
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.65 0.25 320);
-  --chart-1: oklch(0.65 0.25 320);
-  --chart-2: oklch(0.6 0.25 200);
-  --chart-3: oklch(0.6 0.25 120);
-  --chart-4: oklch(0.6 0.25 60);
-  --chart-5: oklch(0.6 0.25 30);
-  --sidebar: oklch(0.08 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.65 0.25 320);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.15 0 0);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: oklch(0.65 0.25 320);
+  --radius: 0.625rem;
+  --background: #0a0f1a;           /* near-black */
+  --foreground: #f1f5f9;
+  --card: #111827;
+  --card-foreground: #f1f5f9;
+  --popover: #111827;
+  --popover-foreground: #f1f5f9;
+  --primary: #5eead4;             /* teal */
+  --primary-foreground: #06121a;  /* dark text on teal */
+  --secondary: #1a2234;
+  --secondary-foreground: #f1f5f9;
+  --muted: #131a28;
+  --muted-foreground: #94a3b8;
+  --accent: #5eead4;
+  --accent-foreground: #06121a;
+  --destructive: oklch(0.62 0.22 25);
+  --border: rgba(148, 163, 184, 0.12);
+  --input: rgba(148, 163, 184, 0.16);
+  --ring: #5eead4;
+  --chart-1: #5eead4;
+  --chart-2: #a78bfa;
+  --chart-3: #22d3ee;
+  --chart-4: #34d399;
+  --chart-5: #7dd3fc;
+  --sidebar: #0a0f1a;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #5eead4;
+  --sidebar-primary-foreground: #06121a;
+  --sidebar-accent: #1a2234;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: rgba(148, 163, 184, 0.12);
+  --sidebar-ring: #5eead4;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    background-color: var(--background);
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    /* transparent so the fixed Night Sky background shows through */
+    @apply text-foreground;
+    background: transparent;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-normal;
+    @apply font-semibold;
     letter-spacing: -0.02em;
   }
 }
 
 @layer components {
-  /* Aevance-inspired components */
-  .aevance-gradient {
-    background: linear-gradient(135deg, #A100FF 0%, #FF0080 50%, #00D4FF 100%);
-  }
-  
-  .aevance-card {
-    @apply bg-card border border-border rounded-lg overflow-hidden;
-    @apply transform transition-all duration-300 hover:scale-105;
-    background: linear-gradient(135deg, rgba(161, 0, 255, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
-  }
-  
-  .aevance-button {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground;
-    @apply px-6 py-3 rounded-md font-medium transition-all duration-200;
-    @apply flex items-center gap-2 hover:gap-3;
-  }
-  
-  .aevance-hero {
-    background: radial-gradient(circle at 20% 50%, rgba(161, 0, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 0, 128, 0.2) 0%, transparent 50%),
-                oklch(0.08 0 0);
-  }
-  
+  /* ─── Aevance / atmosphérique premium components ─── */
+
+  /* gradient text (teal → violet) */
+  .gradient-text,
   .aevance-text-gradient {
-    background: linear-gradient(135deg, #A100FF 0%, #00D4FF 100%);
+    background: linear-gradient(135deg, #5eead4, #a78bfa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
-  .aevance-border {
-    border-image: linear-gradient(135deg, #A100FF 0%, #00D4FF 100%) 1;
+  .gradient-text-shimmer {
+    background: linear-gradient(90deg, #5eead4 0%, #a78bfa 40%, #5eead4 60%, #a78bfa 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shimmer 5s ease-in-out infinite;
   }
-  
-  /* Floating animation */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+  @keyframes gradient-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
-  
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
+
+  .aevance-gradient {
+    background: linear-gradient(135deg, #5eead4 0%, #a78bfa 100%);
   }
-  
-  /* Glow effect */
+
+  /* hero sections are transparent now — the Night Sky is the backdrop */
+  .aevance-hero {
+    background: transparent;
+  }
+
+  /* cards: flat surface + soft teal glow on hover (no rainbow) */
+  .aevance-card {
+    @apply rounded-xl border border-border overflow-hidden transition-all duration-300;
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(8px);
+  }
+  .aevance-card:hover {
+    border-color: rgba(94, 234, 212, 0.4);
+  }
+  .card-glow {
+    position: relative;
+  }
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(94, 234, 212, 0.15), transparent 50%, rgba(167, 139, 250, 0.15));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .card-glow:hover::before { opacity: 1; }
+
+  .aevance-button {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold transition-all duration-200;
+    @apply inline-flex items-center gap-2 hover:gap-3;
+  }
+  .aevance-button:hover {
+    box-shadow: 0 0 36px rgba(94, 234, 212, 0.35);
+  }
+
   .aevance-glow {
-    box-shadow: 0 0 20px rgba(161, 0, 255, 0.3);
+    box-shadow: 0 0 24px rgba(94, 234, 212, 0.22);
   }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
+
+  .text-shadow-glow-teal {
+    text-shadow: 0 0 40px rgba(94, 234, 212, 0.3), 0 0 80px rgba(94, 234, 212, 0.1);
   }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
-  
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #A100FF 0%, #00D4FF 100%);
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #8A00E6 0%, #0099CC 100%);
-  }
-  
-  /* Responsive typography */
+  .float-animation { animation: float 6s ease-in-out infinite; }
+
   @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-      line-height: 1.1;
-    }
-    
-    h2 {
-      font-size: 2rem;
-      line-height: 1.2;
-    }
-  }
-  
-  /* Scroll behavior */
-  html {
-    scroll-behavior: smooth;
+    h1 { font-size: 2.5rem; line-height: 1.1; }
+    h2 { font-size: 2rem; line-height: 1.2; }
   }
 }
+
+/* ─── Night Sky ambient background ─── */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--background);
+}
+.ambient-bg canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.ambient-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── scrollbar + selection ─── */
+::selection { background: rgba(94, 234, 212, 0.2); color: var(--foreground); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }

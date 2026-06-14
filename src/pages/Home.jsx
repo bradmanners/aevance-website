@@ -1,183 +1,265 @@
 import { Link } from 'react-router-dom'
-import { ChevronRight, Users, Brain, Briefcase, Settings } from 'lucide-react'
-import { Button } from '@/components/ui/button.jsx'
-import heroImage from '../assets/consulting-meeting.jpg'
-import aiImage from '../assets/ai-consulting.webp'
+import { motion } from 'framer-motion'
+import { ArrowRight, Users, Brain, Settings, Briefcase } from 'lucide-react'
 
-const responsiveImages = {
-  leadership: {
-    src: '/images/home-leadership-1200.webp',
-    srcSet: '/images/home-leadership-600.webp 600w, /images/home-leadership-1200.webp 1200w',
+const services = [
+  {
+    icon: Users,
+    title: 'Executive Leadership',
+    description: 'Interim CEO, COO and CMO services to steer your organisation through critical transitions.',
   },
-  project: {
-    src: '/images/home-project-1200.webp',
-    srcSet: '/images/home-project-600.webp 600w, /images/home-project-1200.webp 1200w',
+  {
+    icon: Brain,
+    title: 'AI Consulting',
+    description: 'Strategic AI implementation and advisory to transform how your business operates.',
   },
+  {
+    icon: Settings,
+    title: 'Operational Excellence',
+    description: 'Streamline processes and optimise performance across your entire organisation.',
+  },
+  {
+    icon: Briefcase,
+    title: 'Project & Program Management',
+    description: 'Expert delivery of complex initiatives — on scope, on time, with full accountability.',
+  },
+]
+
+const principles = [
+  ['Senior people', 'You work directly with operators who have run the function — not a junior bench.'],
+  ['Real outcomes', 'Engagements are measured against the result they were meant to deliver.'],
+  ['Full ownership', 'We plug in, take responsibility, and keep the mission on course.'],
+]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] } },
 }
 
 const Home = () => {
-  const services = [
-    {
-      icon: Users,
-      title: 'Executive Leadership',
-      description: 'Interim services to guide your organisation through critical transitions.',
-      image: responsiveImages.leadership,
-      gradient: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: Brain,
-      title: 'AI Consulting',
-      description: 'Strategic AI implementation and consulting to transform your business operations.',
-      image: { src: aiImage },
-      gradient: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Settings,
-      title: 'Operational Excellence',
-      description: 'Streamline processes and optimise performance across your entire organisation.',
-      image: { src: heroImage },
-      gradient: 'from-orange-500 to-red-500'
-    },
-    {
-      icon: Briefcase,
-      title: 'Project & Program Management',
-      description: 'Expert project and program management to ensure successful delivery of complex initiatives.',
-      image: responsiveImages.project,
-      gradient: 'from-green-500 to-emerald-500'
-    }
-  ]
-
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center aevance-hero">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl float-animation"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl float-animation" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 right-1/3 w-32 h-32 bg-pink-500/20 rounded-full blur-3xl float-animation" style={{animationDelay: '4s'}}></div>
-        </div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight">
-            Professional Services
-            <br />
-            <span className="aevance-text-gradient">
-              Reimagined
+      {/* ── Hero ── */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden aevance-hero">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-1.5 backdrop-blur-sm"
+          >
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+              Professional Services & Consulting
             </span>
+          </motion.div>
+
+          <h1 className="mb-6 text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl">
+            <motion.span
+              initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="inline-block"
+            >
+              Senior expertise,
+            </motion.span>
+            <br />
+            <motion.span
+              initial={{ opacity: 0, y: 30, scale: 0.96, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 0.9, delay: 0.5 }}
+              className="gradient-text-shimmer inline-block"
+            >
+              on demand.
+            </motion.span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Expert leadership, cutting-edge AI consulting, and world-class services 
-            to accelerate your business transformation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="aevance-button text-lg px-8 py-6">
-              <Link to="/services">
-                Explore Services
-                <ChevronRight className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link to="/appointments">Schedule Consultation</Link>
-            </Button>
-          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="mb-6 text-lg font-medium tracking-wide text-primary text-shadow-glow-teal sm:text-xl md:text-2xl"
+          >
+            Leadership. AI. Delivery.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
+            className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+          >
+            Interim executive leadership, AI consulting, and hands-on delivery — senior operators who
+            plug into your business and move the mission forward.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
+            <Link to="/services" className="aevance-button text-base">
+              Explore services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/appointments"
+              className="rounded-full border border-border px-7 py-3 text-base font-medium text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:text-foreground"
+            >
+              Schedule a consultation
+            </Link>
+          </motion.div>
         </div>
+
+        {/* scroll hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="text-xs font-medium uppercase tracking-[0.2em]">Scroll</span>
+            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="opacity-60">
+              <rect x="3" y="1" width="10" height="16" rx="5" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-              Our <span className="aevance-text-gradient">Expertise</span>
+      {/* ── Services ── */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+              Our <span className="gradient-text">expertise</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions designed to elevate your business to new heights
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Senior, outcome-focused services across leadership, AI, and delivery.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {services.map((service, i) => {
+              const Icon = service.icon
               return (
-                <div
-                  key={index}
-                  className="aevance-card group relative overflow-hidden p-8 hover:aevance-glow"
+                <motion.div
+                  key={service.title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: i * 0.08 }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
-                    <img
-                      src={service.image?.src}
-                      srcSet={service.image?.srcSet}
-                      sizes="(min-width: 1024px) 40vw, 100vw"
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl mb-6`}>
-                      <IconComponent className="h-8 w-8 text-white" />
+                  <div className="aevance-card card-glow group h-full p-8">
+                    <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
+                      <Icon className="h-7 w-7 text-primary" />
                     </div>
-                    
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                    
+                    <h3 className="mb-3 text-2xl font-semibold text-foreground">{service.title}</h3>
+                    <p className="mb-6 leading-relaxed text-muted-foreground">{service.description}</p>
                     <Link
                       to="/services"
-                      className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors group"
+                      className="inline-flex items-center gap-1.5 font-medium text-primary transition-all hover:gap-2.5"
                     >
                       Learn more
-                      <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* Impact Statement */}
-      <section className="py-24 bg-card">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-6xl md:text-8xl font-bold text-foreground mb-6">
-            360° <span className="aevance-text-gradient">VALUE</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Every day, we deliver change and create value for all our 
-            stakeholders.
-          </p>
-          <Button asChild className="aevance-button text-lg px-8 py-6">
-            <Link to="/about">
-              See our impact
-              <ChevronRight className="h-5 w-5" />
-            </Link>
-          </Button>
+      {/* ── Value / what makes Aevance different ── */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+          >
+            A team's output, <span className="gradient-text">without the team.</span>
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.1 }}
+            className="mx-auto mb-14 max-w-2xl text-lg text-muted-foreground"
+          >
+            Aevance pairs senior operators with AI leverage — so a small, accountable team delivers the
+            scope of a much larger one. No bench, no bloat, no drift.
+          </motion.p>
+
+          <div className="grid gap-6 sm:grid-cols-3">
+            {principles.map(([title, body], i) => (
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: i * 0.1 }}
+                className="aevance-card p-6 text-left"
+              >
+                <h3 className="mb-2 text-lg font-semibold text-foreground">{title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 aevance-hero">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to <span className="aevance-text-gradient">Transform Your Business?</span>
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our expertise can drive your organisation forward. 
-            Schedule a consultation today.
-          </p>
-          <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-primary hover:bg-white/90">
-            <Link to="/contact">
-              Get in Touch
-              <ChevronRight className="ml-2 h-5 w-5" />
+      {/* ── Closing CTA ── */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            className="mb-6 text-4xl font-bold tracking-tight md:text-5xl"
+          >
+            Ready to move your <span className="gradient-text">mission</span> forward?
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.1 }}
+            className="mx-auto mb-10 max-w-xl text-lg text-muted-foreground"
+          >
+            Let's discuss where senior expertise can have the most impact. Schedule a consultation today.
+          </motion.p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link to="/appointments" className="aevance-button text-base">
+              Schedule a consultation
+              <ArrowRight className="h-4 w-4" />
             </Link>
-          </Button>
+            <Link
+              to="/contact"
+              className="rounded-full border border-border px-7 py-3 text-base font-medium text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:text-foreground"
+            >
+              Get in touch
+            </Link>
+          </div>
         </div>
       </section>
     </div>

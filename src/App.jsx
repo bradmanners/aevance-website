@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { AmbientBackground } from './components/AmbientBackground'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -12,6 +13,7 @@ import './App.css'
 function App() {
   return (
     <Router>
+      <AmbientBackground />
       <div className="min-h-screen flex flex-col">
         <ScrollToTop />
         <Header />
